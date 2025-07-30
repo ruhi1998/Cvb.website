@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Private Informationen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .monkey {
+      width: 120px;
+      margin: 0 auto 20px;
+      transition: transform 0.4s;
+    }
+
+    .monkey.cover-eyes {
+      transform: rotate(10deg) scale(1.1);
+      filter: brightness(0.8);
+    }
+
+    input[type="password"] {
+      padding: 12px;
+      width: 80%;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+
+    button {
+      padding: 12px 24px;
+      margin-top: 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff6f61;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      background-color: #e85a4f;
+      transform: scale(1.05);
+    }
+
+    .error {
+      margin-top: 10px;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Monkey SVG Image -->
+    <img src="./Monkey.gif" alt="Monkey" id="monkey" class="monkey">
+    
+    <h2>🔒 Passwortgeschützter Bereich</h2>
+    <p>Bitte Passwort eingeben:</p>
+    
+    <input type="password" id="password" placeholder="Passwort eingeben" onfocus="coverEyes()" onblur="uncoverEyes()">
+    <br>
+    <button onclick="checkPassword()">Einloggen</button>
+    <div class="error" id="error"></div>
+  </div>
+
+  <script>
+    const monkey = document.getElementById("monkey");
+
+    function coverEyes() {
+      monkey.classList.add("cover-eyes");
+    }
+
+    function uncoverEyes() {
+      monkey.classList.remove("cover-eyes");
+    }
+
+    function checkPassword() {
+      const password = document.getElementById("password").value;
+      if (password === "4620") {
+        window.location.href = "geheim.html";
+      } else {
+        document.getElementById("error").textContent = "❌ Passwort ist falsch!";
+      }
+    }
+  </script>
+
+</body>
+</html>
