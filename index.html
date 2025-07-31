@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Willkommen – Rohullah Yarmohammadi</title>
+  <link rel="stylesheet" href="Style.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #007acc;
+    }
+    iframe {
+      margin-top: 30px;
+      width: 100%;
+      height: 700px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Willkommen auf meiner Website!</h1>
+  <p>
+    Mein Name ist <strong>Rohullah Yarmohammadi</strong>.<br>
+    
+  </p>
+  <p>
+    Unten finden Sie meinen Lebenslauf direkt eingebettet in die Seite.
+  </p>
+
+  <!-- PDF رزومه نمایش داده می‌شود -->
+  <iframe src="./Resume.pdf"></iframe>
+
+  <footer>
+    <p>📞 <a href="tel:+4915172472358">+49 151 72472358</a></p>
+    <p>📧 <a href="mailto:yarmohammadirohullah@gmail.com">yarmohammadirohullah@gmail.com</a></p>
+    <p>💬 <a href="https://wa.me/4915172472358" target="_blank">WhatsApp schreiben</a></p>
+  </footer>
+   
+
+
+
+  <script>
+    function checkPassword() {
+        const password = prompt("Bitte Passwort eingeben:");
+        const correctPassword = "4620"; // رمز خودتو اینجا بزار
+    
+        if (password === correctPassword) {
+            document.getElementById("secretContent").style.display = "block";
+            document.getElementById("welcome").style.display = "none";
+        } else {
+            alert("Falsches Passwort! Bitte erneut versuchen.");
+        }
+    }
+    </script>
+
+
+<div id="secretContent">
+    
+    <p>  Hier können Sie meinen weitere sensible <a href="./Dokument.html">Informationen</a> finden.</p>
+    <!-- محتوای محرمانه رو اینجا اضافه کن -->
+  </div>
+       
+</div>
+
+
+
+
+</body>
+</html>
